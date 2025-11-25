@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <h1>WeatherApp</h1>
+            <p class="tagline">Advanced weather intelligence with forecasts & insights</p>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+            <button id="location-btn" title="Use my location"><i class="fas fa-location-arrow"></i></button>
+        </div>
+        
+        <div class="recent-searches" id="recent-searches" style="display: none;">
+            <div class="recent-title">Recent Searches:</div>
+            <div id="recent-items"></div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading weather data...</p>
+        </div>
+        
+        <div class="error-message" id="error-message">
+            <i class="fas fa-exclamation-circle"></i>
+            <p id="error-text">City not found. Please try again.</p>
+        </div>
+        
+        <div class="weather-info" id="weather-info">
+            <h2 class="city-name" id="city-name">-</h2>
+            <p class="date" id="date">-</p>
+            
+            <div class="weather-icon">
+                <i class="fas fa-sun" id="weather-icon"></i>
+            </div>
+            
+            <div class="temperature" id="temperature">-
+                <button class="unit-toggle" id="unit-toggle">°F</button>
+            </div>
+            
+            <p class="weather-description" id="weather-description">-</p>
+            
+            <div class="weather-alerts" id="weather-alerts">
+                <div class="alert-title"><i class="fas fa-exclamation-triangle"></i> Weather Alert</div>
+                <div class="alert-content" id="alert-content"></div>
+            </div>
+            
+            <div class="air-quality" id="air-quality" style="display: none;">
+                <h3>Air Quality Index</h3>
+                <div class="aqi-value" id="aqi-value">-</div>
+                <div id="aqi-status">-</div>
+            </div>
+            
+            <div class="weather-tips" id="weather-tips">
+                <div class="tips-title"><i class="fas fa-lightbulb"></i> Weather Tip</div>
+                <div class="tips-content" id="tips-content">Check back for personalized weather insights!</div>
+            </div>
+            
+            <div class="details">
+                <div class="detail-card">
+                    <i class="fas fa-temperature-high"></i>
+                    <div class="label">Feels Like</div>
+                    <div class="value" id="feels-like">-</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-tint"></i>
+                    <div class="label">Humidity</div>
+                    <div class="value" id="humidity">-</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-wind"></i>
+                    <div class="label">Wind Speed</div>
+                    <div class="value" id="wind-speed">-</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <div class="label">Pressure</div>
+                    <div class="value" id="pressure">-</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-eye"></i>
+                    <div class="label">Visibility</div>
+                    <div class="value" id="visibility">-</div>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-sun"></i>
+                    <div class="label">UV Index</div>
+                    <div class="value" id="uv-index">-</div>
+                </div>
+            </div>
+            
+            <div class="forecast-container">
+                <div class="forecast-title"><i class="fas fa-calendar-alt"></i> 5-Day Forecast</div>
+                <div class="forecast-scroll" id="forecast-container"></div>
+            </div>
+            
+            <div class="weather-map">
+                <h3><i class="fas fa-map"></i> Weather Map</h3>
+
+                <div id="weather-map"></div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>WeatherApp &copy; 2025 | Advanced Weather Intelligence | Designed by <a href="https://www.linkedin.com/in/andile-gift-shabalala-2345bb313" class="developer-link" target="_blank">Andile Shabalala</a></p>
+        </footer>
+    </div>
+
+    <!-- Add Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
