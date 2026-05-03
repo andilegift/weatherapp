@@ -34,4 +34,6 @@ To run this project locally:
 
 **Note:** You will need your own API key from [OpenWeatherMap](https://openweathermap.org/api). Replace the `apiKey` variable in `script.js` with your key.
 
+## Developer
+
 [**Andile Gift Shabalala**](https://www.linkedin.com/in/andile-gift-shabalala-2345bb313/)
